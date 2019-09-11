@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import os
-import urllib
-import urllib.request
 
 # Set Query | In future use Arg arse
 query = "pepsi"
@@ -22,10 +20,10 @@ for image in tags:
     print(image['src'])
     p = os.path.join(f"output/{img_num}.jpg")
 
-
-    #Save File to Folder
-    # f = open(f'{p}/{img_num}.jpg', "wb")
+    #Save Image File to Folder
     f = open(p, "wb")
     f.write(img.content)
     f.close()
+
+    #Increment number for file name
     img_num = img_num + 1
